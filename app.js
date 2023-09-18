@@ -10,21 +10,29 @@ form.addEventListener('submit', async function(e) {
     console.dir(form.elements.tvQuery.value);
     const searchTerm = form.elements.tvQuery.value;
 
-    // Axios provides a method of requesting a base url and then adding in config parameters.  The variable below was created to use this feature.  This allows for easily adding multiple search paramters to the URL instead of trying to always manipulate the URL.  It will accept multiple entries such as {q: searchTerm, timezone: 'mountain'}
-    const config = {params: {q: searchTerm, timezone: 'mountain'}}
-
-    const response = await axios.get(`https://api.tvmaze.com/search/shows`, config);
-
-    // form.reset() would also work here.
-    form.elements.tvQuery.value = ''
+    await executeSearch(searchTerm);
 
     // By logging the response we can then check the properties of the response data.  We'll use the image and medium properties for now.
     // console.log(response.data);
     // console.log(response.data[0].show.image.medium);
-
-    appendImages(response.data)
+    
+    appendImages(response.data);
 
 });
+
+const executeSearch = async (query) => {
+    // Axios provides a method of requesting a base url and then adding in config parameters.  The variable below was created to use this feature.  This allows for easily adding multiple search paramters to the URL instead of trying to always manipulate the URL.  It will accept multiple entries such as {q: searchTerm, timezone: 'mountain'}
+    const config = {params: {q: query, timezone: 'mountain'}}
+
+    return response = await axios.get(`https://api.tvmaze.com/search/shows`, config);
+
+    console.log(response);
+
+    // form.reset() would also work here.
+    form.elements.tvQuery.value = ''
+
+    // return response;
+}
 
 // This function accepts an array as argument.  It will allow looping over search results for each show found.  The results are an array that includes all shows.
 const appendImages = (shows) => {
