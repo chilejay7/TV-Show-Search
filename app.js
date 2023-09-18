@@ -10,7 +10,13 @@ form.addEventListener('submit', async function(e) {
     console.dir(form.elements.tvQuery.value);
     const searchTerm = form.elements.tvQuery.value;
 
-    const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
+    // Axios provides a method of requesting a base url and then adding in config parameters.  The variable below was created to use this feature.  This allows for easily adding multiple search paramters to the URL instead of trying to always manipulate the URL.  It will accept multiple entries such as {q: searchTerm, timezone: 'mountain'}
+    const config = {params: {q: searchTerm, timezone: 'mountain'}}
+
+    const response = await axios.get(`https://api.tvmaze.com/search/shows`, config);
+
+    // form.reset() would also work here.
+    form.elements.tvQuery.value = ''
 
     // By logging the response we can then check the properties of the response data.  We'll use the image and medium properties for now.
     // console.log(response.data);
