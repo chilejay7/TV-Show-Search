@@ -13,11 +13,24 @@ form.addEventListener('submit', async function(e) {
     const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
 
     // By logging the response we can then check the properties of the response data.  We'll use the image and medium properties for now.
-    console.log(response.data);
-    console.log(response.data[0].show.image.medium);
+    // console.log(response.data);
+    // console.log(response.data[0].show.image.medium);
 
-    const img = document.createElement('img');
-    img.src = response.data[0].show.image.medium;
-    document.body.append(img)
+    appendImages(response.data)
+
 });
 
+// This function accepts an array as argument.  It will allow looping over search results for each show found.  The results are an array that includes all shows.
+const appendImages = (shows) => {
+    for (let result of shows) {
+        // An if statement was needed because some shows do not have an image and would return an error.
+        if(result.show.image) {
+        console.log(result);
+        const img = document.createElement('img');
+        img.src = result.show.image.medium;
+        document.body.append(img)
+        }
+    }
+}
+    
+    
