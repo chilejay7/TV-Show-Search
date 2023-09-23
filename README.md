@@ -6,4 +6,4 @@ This application was built using the TVMaze API.  Documentation can be found by 
 
 URL: /search/shows?q=:query
 
-Example: https://api.tvmaze.com/search/shows?q=girls
+Example: https://api.tvmaze.com/search/shows?q=dragons
