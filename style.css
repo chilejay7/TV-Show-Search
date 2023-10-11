@@ -18,7 +18,8 @@
 }
 
 body {
-    background-color: var(--color9);
+    /* background-color: var(--color9); */
+    background: url(./witcher.jpg);
 }
 
 .container {
@@ -30,7 +31,9 @@ img {
 }
 
 header {
-    background-color: var(--color1);
+    /* background: linear-gradient(90deg, #76C893, #B5E48C, #76C893); */
+    background: linear-gradient(90deg, #168AAD, #1E6091, #168AAD);
+    border-radius: 0.5em;
 }
 
 #search-btn {
