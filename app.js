@@ -21,6 +21,7 @@ form.addEventListener('submit', async function(e) {
     
     // The response is returned from the 
     appendImages(response.data);
+    form.reset();
 
 });
 
@@ -32,12 +33,7 @@ const executeSearch = async (query) => {
     return response = await axios.get(`https://api.tvmaze.com/search/shows`, config);
 
     console.log(response);
-
-    form.reset()
-    // form.elements.tvQuery.value = ''
-
-    // return response;
-}
+};
 
 // This function accepts an array as argument.  It will allow looping over search results for each show found.  The results are an array that includes all shows.
 const appendImages = (shows) => {
@@ -51,7 +47,11 @@ const appendImages = (shows) => {
 
         // This makes the images clickable links.
         const imgLink = document.createElement('a');
-        imgLink.href = result.show.officialSite;
+
+        if (result.show.officialSite !== null) {
+            imgLink.href = result.show.officialSite;
+        }
+       
         imgLink.target ='_blank'
         imgLink.appendChild(img);
         // document.body.append(img)

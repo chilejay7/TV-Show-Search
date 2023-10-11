@@ -17,6 +17,12 @@
     font-family: 'Metal Mania', sans-serif;
 }
 
+:root { 
+    --gradient1: linear-gradient(90deg, #34A0A4, #168AAD, #1E6091, #168AAD, #34A0A4);
+
+    --gradient2: linear-gradient(90deg, #34A0A4, #168AAD, #34A0A4, #168AAD, #1E6091);
+}
+
 body {
     /* background-color: var(--color9); */
     background: url(./witcher.jpg);
@@ -32,10 +38,18 @@ img {
 
 header {
     /* background: linear-gradient(90deg, #76C893, #B5E48C, #76C893); */
-    background: linear-gradient(90deg, #168AAD, #1E6091, #168AAD);
+    background: var(--gradient1);
     border-radius: 0.5em;
 }
 
 #search-btn {
     background-color: var(--color3);
+    border-radius: 0.5em;;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
 }
