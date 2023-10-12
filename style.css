@@ -30,7 +30,8 @@ body {
 }
 
 .container {
-    padding: 10px;
+    padding-top: 3%;
+    /* margin-top: 2%; */
 }
 
 img {
@@ -38,7 +39,6 @@ img {
 }
 
 header {
-    /* background: linear-gradient(90deg, #76C893, #B5E48C, #76C893); */
     background: var(--gradient1);
     border-radius: 0.5em;
     display: flex;
@@ -59,7 +59,7 @@ nav ul {
     list-style: none;
     font-size: 1.5rem;
     margin-top: 10%;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-weight: bold;
 }
 

@@ -50,13 +50,13 @@ const appendImages = (shows) => {
 
         if (result.show.officialSite !== null) {
             imgLink.href = result.show.officialSite;
-        }
+        };
        
-        imgLink.target ='_blank'
+        imgLink.target = '_blank';
         imgLink.appendChild(img);
         // document.body.append(img)
         gallery.append(imgLink)
-        }
+        };
     }
 };
 
@@ -68,6 +68,3 @@ gallery.addEventListener('click', function (e, shows) {
         const h1 = shows.show.name;
     }
 });
-
-    
-    
