@@ -9,6 +9,10 @@
     --color7: #1A759F;
     --color8: #1E6091;
     --color9: #184E77;
+
+    --gradient1: linear-gradient(90deg, #34A0A4, #168AAD, #1E6091, #168AAD, #34A0A4);
+
+    --gradient2: linear-gradient(90deg, #34A0A4, #168AAD, #34A0A4, #168AAD, #1E6091);
 }
 
 *{
@@ -17,20 +21,25 @@
     font-family: 'Metal Mania', sans-serif;
 }
 
-:root { 
-    --gradient1: linear-gradient(90deg, #34A0A4, #168AAD, #1E6091, #168AAD, #34A0A4);
+h1 {
+    font-size: 3rem;
+}
 
-    --gradient2: linear-gradient(90deg, #34A0A4, #168AAD, #34A0A4, #168AAD, #1E6091);
+#newRelease-body {
+    background: url(theOneRing.jpg);
+    background-size: cover;
 }
 
 body {
     /* background-color: var(--color9); */
     background: url(./witcher.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container {
-    padding-top: 3%;
+    padding-top: 2%;
+    flex-basis: 30%;
     /* margin-top: 2%; */
 }
 
@@ -45,9 +54,11 @@ header {
     justify-content: space-between;
 }
 
-#search-btn {
+.btn {
     background-color: var(--color3);
     border-radius: 0.5em;
+    width: 18%;
+    font-weight: bold;
 }
 
 nav {
@@ -58,7 +69,8 @@ nav ul {
     display: flex;
     list-style: none;
     font-size: 1.5rem;
-    margin-top: 10%;
+    /* margin-top: 10%; */
+    padding-top: 10%;
     justify-content: space-around;
     font-weight: bold;
 }
