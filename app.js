@@ -68,6 +68,3 @@ gallery.addEventListener('click', function (e, shows) {
         const h1 = shows.show.name;
     }
 });
-
-    
-    
