@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Cody Burkholder" />
     <meta name="description" content="This application will provide a search of tv shows using the TVMaze API." />
     <title>TV Show Search</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -18,7 +20,7 @@
     <header>
         <div class="form container">
             <h1>TV Show Search</h1>
-            <form id="tv-search" >
+            <form id="tv-search">
                 <input type="text" placeholder="TV Show Title" name="tvQuery">
                 <button class="btn" id="search-btn">Search</button>
                 <button class="btn" id="clear-btn">Clear Search</button>
@@ -32,7 +34,7 @@
                 <li>Recently Searched</li>
             </ul>
         </nav>
-    
+
     </header>
 
     <main>
@@ -41,8 +43,9 @@
         </section>
     </main>
 
-   
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./app.js"></script>
 </body>
+
 </html>

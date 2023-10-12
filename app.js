@@ -3,6 +3,7 @@
 const form = document.querySelector('#tv-search');
 const images = document.querySelectorAll('img');
 const gallery = document.getElementById('gallery');
+const clearBtn = document.getElementById('clear-btn');
 
 // This has to be an async function to use the await keyword and wait for the response from the API's server.
 form.addEventListener('submit', async function(e) {
@@ -60,11 +61,21 @@ const appendImages = (shows) => {
     }
 };
 
+// This adds a listener to each image and links it to the official site if one is included in the data.
 gallery.addEventListener('click', function (e, shows) {
     if (e.target.tagName === 'IMG') {
         console.dir(e.target);
         const popWindow = document.createElement('div');
 
-        const h1 = shows.show.name;
+        let modalSection = document.createElement('section');
+        let modalDiv = document.createElement('div');
+        let modalH2 = shows.show.name;
     }
 });
+
+// This is used to easily clear the search results by refreshing the page.
+clearResults = () => {
+    location.reload();
+}
+
+clearBtn.addEventListener('click', clearResults);
