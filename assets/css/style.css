@@ -65,6 +65,12 @@ body {
 
 img {
     margin: 10px;
+    transition: 0.2s;
+
+    &:hover {
+        transform: translate(0, -5px);
+        /* box-shadow: 5px 2px 2px; */
+    }
 }
 
 header {
@@ -84,7 +90,6 @@ header {
     transition: 0.2s;
 
     &:hover {
-        /* background-color: #34A0A4; */
         box-shadow: 2px 2px 2px;
         transform: translate(0, -5px);
     }
