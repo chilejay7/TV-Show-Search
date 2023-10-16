@@ -40,7 +40,6 @@ body {
 .container {
     padding-top: 2%;
     flex-basis: 30%;
-    /* margin-top: 2%; */
 }
 
 img {
@@ -57,8 +56,9 @@ header {
 .btn {
     background-color: var(--color3);
     border-radius: 0.5em;
-    width: 18%;
+    width: 100px;
     font-weight: bold;
+    margin: 2%;
 }
 
 nav {
@@ -67,12 +67,16 @@ nav {
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     font-size: 1.5rem;
-    /* margin-top: 10%; */
     padding-top: 10%;
     justify-content: space-around;
     font-weight: bold;
+}
+
+form {
+    flex-wrap: wrap;
 }
 
 #gallery {
@@ -80,4 +84,10 @@ nav ul {
     flex-wrap: wrap;
     /* justify-content: space-evenly; */
     /* align-items: center; */
+}
+
+@media (max-width: 580px) {
+    body {
+        background-repeat: repeat;
+    }
 }
