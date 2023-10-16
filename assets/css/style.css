@@ -32,7 +32,7 @@ h1 {
 
 body {
     /* background-color: var(--color9); */
-    background: url(./witcher.jpg);
+    background: url(../images/witcher.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
