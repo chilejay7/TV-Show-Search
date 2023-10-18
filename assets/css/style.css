@@ -34,6 +34,7 @@
     --fall5: #606c38;
     --gradientDark: linear-gradient(90deg, #FBBF03, #EA7401, #BD2601, #EA7401, #FBBF03);
     --gradientLight: linear-gradient(0.25turn, #FFEE57, #EA7401, #FFF4AD);
+    --gradientInvert: linear-gradient(90deg, #BD2601, #EA7401, #FBBF03, #EA7401, #BD2601);
 }
 
 *{
@@ -45,11 +46,6 @@
 h1 {
     font-size: 3rem;
     flex-basis: 100%;
-}
-
-#newRelease-body {
-    background: url(theOneRing.jpg);
-    background-size: cover;
 }
 
 body {
@@ -79,10 +75,15 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    transition: all 5s;
+
+    &.invertColor {
+        background: var(--gradientInvert);
+    }
 }
 
 .btn {
-    background-color: var(--color3);
+    background-color: var(--summer4);
     border-radius: 0.5em;
     width: 100px;
     font-weight: bold;
@@ -92,7 +93,7 @@ header {
 
     &:hover {
         box-shadow: 2px 2px 2px;
-        transform: translate(0, -5px);
+        transform: translate(0, -2px);
     }
 
 }

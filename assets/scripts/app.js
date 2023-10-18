@@ -4,6 +4,10 @@ const form = document.querySelector('#tv-search');
 const images = document.querySelectorAll('img');
 const gallery = document.getElementById('gallery');
 const clearBtn = document.getElementById('clear-btn');
+const header = $('.header');
+const colorChangeClass = 'invertColor';
+
+const headerIndex = $('#header1');
 
 // This has to be an async function to use the await keyword and wait for the response from the API's server.
 form.addEventListener('submit', async function(e) {
@@ -22,6 +26,7 @@ form.addEventListener('submit', async function(e) {
     
     // The response is returned from the 
     appendImages(response.data);
+    invertColors();
     form.reset();
 
 });
@@ -76,6 +81,14 @@ gallery.addEventListener('click', function (e, shows) {
 // This is used to easily clear the search results by refreshing the page.
 clearResults = () => {
     location.reload();
+}
+
+// Ternary expression added to change header background color on search.
+invertColors = () => {
+    header[0].classList.contains(colorChangeClass) ? header[0].classList.remove(colorChangeClass)
+    : header[0].classList.add(colorChangeClass);
+    
+    // header.classList.add(colorChangeClass)
 }
 
 clearBtn.addEventListener('click', clearResults);
